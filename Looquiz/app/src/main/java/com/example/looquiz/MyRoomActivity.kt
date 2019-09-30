@@ -29,6 +29,7 @@ class MyRoomActivity : AppCompatActivity() {
         myroom_roomcodenum = intent.getStringExtra("codenum")
 
         Asynctask().execute("0",getString(R.string.room_quizlist),myroom_roomcodenum)
+        Asynctask().execute("1",getString(R.string.search_mem),myroom_roomcodenum)
 
         Log.d("check",myroom_roomcodenum)
 
@@ -48,8 +49,7 @@ class MyRoomActivity : AppCompatActivity() {
 
         //멤버조회
         myroom_member.setOnClickListener {
-
-            Asynctask().execute("1",getString(R.string.search_mem),myroom_roomcodenum)
+            //            Asynctask().execute("1",getString(R.string.search_mem),myroom_roomcodenum)
             var builder = AlertDialog.Builder(this)
             builder.setTitle(myroom_roomtitle.toString())
 
@@ -62,6 +62,7 @@ class MyRoomActivity : AppCompatActivity() {
             //makingQuizIntent.putExtra("rname", myroom_rname.toString())
             makingQuizIntent.putExtra("roomcodenum", myroom_codenum.text.toString())
             startActivity(makingQuizIntent)
+            finish()
         }
     }
     inner class Asynctask: AsyncTask<String, Void, String>() {
@@ -103,7 +104,7 @@ class MyRoomActivity : AppCompatActivity() {
                         //   var message = json.getInt("message")
 
                         for(i in 0 until jsonary.length()){
-                            var jsonquiz = jsonary[0] as JSONObject
+                            var jsonquiz = jsonary[i] as JSONObject
                             var qid : Int = jsonquiz.getInt("qid")
                             var dname : String = jsonquiz.getString("dname")
                             var qname : String = jsonquiz.getString("qname")

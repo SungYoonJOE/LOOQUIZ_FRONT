@@ -31,7 +31,7 @@ class QuizRateActivity : AppCompatActivity() {
 
         cityname = intent.getStringExtra("cityname")
 
-       // val mAdapter=QuizAdapter(this,cityList)
+        // val mAdapter=QuizAdapter(this,cityList)
         quizrate_rv.adapter=mAdapter
 
         val lm = LinearLayoutManager(this)

@@ -33,9 +33,9 @@
     </LinearLayout>
 
     <ImageView
-            android:layout_width="50dp"
+            android:layout_width="40dp"
             android:layout_height="match_parent"
-            app:srcCompat="@drawable/roomexit"
+            app:srcCompat="@drawable/minus"
             android:layout_gravity="center_vertical"
             android:id="@+id/quizlist_delete"/>
 

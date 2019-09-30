@@ -105,9 +105,9 @@ class Main2Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         var view:View = navigationView.getHeaderView(0)
         var userid=view.findViewById<TextView>(R.id.uid)
 
-        var uid:String? = null
+        /*var uid:String? = null
         uid = intent.getStringExtra("uid")
-        userid.text = "${uid}" + " 님"
+        userid.text = "${uid}" + " 님"*/
 
         /*var btn_logout = view.findViewById<Button>(R.id.btn_logout)
         btn_logout.setOnClickListener {
@@ -297,6 +297,7 @@ class Main2Activity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         override fun onMapReady(p0: GoogleMap?) {
             gMap = p0
             getMyLocation()
+            gMap!!.setPadding(20,190,10,0)
             Log.d("현위치 >>", "userLoc ${userLoc}")
 
             p0?.animateCamera(CameraUpdateFactory.zoomTo(15f))

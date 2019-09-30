@@ -39,11 +39,11 @@ class RegionBaseAdapter(val context: Context,val list:List<String?>) : BaseAdapt
             val viewGroup = activity.findViewById<ViewGroup>(android.R.id.content)
                 .getChildAt(0)
 
-/*            //클릭하면 이미지뷰가 변하는 코드
-            viewGroup.imageView.setImageResource(R.drawable.suwon)
+            //클릭하면 이미지뷰가 변하는 코드
+            //viewGroup.imageView.setImageResource(R.drawable.suwon)
             var intent = Intent(context,QuizRateActivity::class.java)
             intent.putExtra("cityname",list[position])
-            context.startActivity(intent)*/
+            context.startActivity(intent)
         }
 
         return view
